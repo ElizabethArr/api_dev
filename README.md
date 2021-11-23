@@ -3,18 +3,23 @@ You have 72 hours to submit your code. Read the next lines to know about the req
 
 #### The challenge is simple. 
 #### According to your desired position is, you are going to choice from the next options:
-#### Our new business associate needs a GUI in order to their customers can to submit personal information for future telephonic contact. 
+#### Our new business associate needs a GUI in order to their customers can to submit personal information for future telephonic contact.
 
-## Frontend developer challenge instructions
+## Frontend developer challenge's instructions
+##### Clone the repository using the following url 
+`https://{your-username-here}@bitbucket.org/MAS_development/crud_dev_jr.git`
 > Using ReactJS or AngularJS you must create SPA with a simple form registration.
 > This is the URL of the API [https://micros.masservicios-ti.com.mx](#https://micros.masservicios-ti.com.mx)
 > This is the main endpoint of the API `/api/customers`
 > Attached to this message you'll found an (dot) JSON file EvaluacionProgramadoresFrontEndJunior.postman_collection.json, using POSTMAN to open it (google it if necessary), the documentation wil guide you through the actions that your GUI needs to perform. 
 
-## Backend developer challenge instructions
+
+## Backend developer challenge's instructions
+##### Clone the repository using the following url 
+``https://{your-username-here}@bitbucket.org/MAS_development/api_dev_jr.git``
+
 > Using Laravel you must create API for a simple form registration.
 > Attached to this message you'll found an (dot) JSON file EvaluacionProgramadoresFrontEndJunior.postman_collection.json, using POSTMAN to open it (google it if necessary), the documentation wil guide you through the actions that your API needs to perform. 
-
 
 ### Bonus Points
  * Use unit tests.
