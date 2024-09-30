@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');  // Add name column
             $table->string('email')->unique();  // Add email column and make it unique
-           
+            $table->string('phonr')->unique();
         });
     }
 
