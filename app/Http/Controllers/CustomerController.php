@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Customer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class CustomerController extends Controller
 {
@@ -29,5 +30,21 @@ class CustomerController extends Controller
     
         return response()->json($customer, 201);
     }
+
+     // Método para eliminar un cliente
+     public function destroy($id)
+     {
+        //Log::info('Deleting: ' . $id);
+
+         $customer = Customer::find($id);
+ 
+         if (!$customer) {
+             return response()->json(['message' => 'Customer not found'], 400);
+         }
+ 
+         $customer->delete();
+ 
+         return response()->json(['message' => 'Customer deleted successfully'], 200);
+     }
     
 }
