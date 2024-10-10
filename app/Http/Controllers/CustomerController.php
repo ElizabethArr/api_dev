@@ -46,5 +46,37 @@ class CustomerController extends Controller
  
          return response()->json(['message' => 'Customer deleted successfully'], 200);
      }
+
+       // Método para actualizar un cliente
+    public function update(Request $request, $id)
+    {
+        // Buscar el cliente por ID
+        $customer = Customer::find($id);
+
+        // Verificar si el cliente existe
+        if (!$customer) {
+            return response()->json(['message' => 'Customer not found'], 404);
+        }
+
+
+         // Validar los datos entrantes
+         $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
+            'email' => 'required|email|unique:customers,email,' . $id, // Excluye el cliente actual para evitar conflicto de email
+            'birth_date' => 'required|date_format:Y-m-d',
+            'personal_phone' => 'required|digits:10',
+            'contact_phone' => 'nullable|digits:10', // Ahora es opcional
+            'zip_code' => 'required|digits:6',
+        ]);
+
+         // Actualizar los datos del cliente
+         $customer->update($validatedData);
+
+         // Retornar respuesta con datos actualizados
+         return response()->json(['message' => 'Customer updated successfully', 'customer' => $customer], 200);
+     }
+
+
     
 }
